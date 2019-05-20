@@ -15,7 +15,8 @@ class User < ApplicationRecord
              description: self.description,
              looking: self.looking,
              roommates: generateRoommates(),
-             user_attributes: generateUserAttributes()
+             user_attributes: generateUserAttributes(),
+             recomandations: generateRecomandations()
             }
     if(self.looking)
       rtnObj[:address] = self.address
@@ -29,7 +30,7 @@ class User < ApplicationRecord
 
     rtnObj = { current: [], non_current: [] }
 
-    self.roommates.map do |roommate|
+    self.roommates.each do |roommate|
 
         if(roommate.current)
           rtnObj[:current].push(roommate.generateRoommate())
@@ -40,7 +41,7 @@ class User < ApplicationRecord
     end
 
     return rtnObj
-    
+
   end
 
   def generateUserAttributes()
@@ -48,6 +49,26 @@ class User < ApplicationRecord
     return self.user_attributes.map do |attribute|
         return attribute
     end
+
+  end
+
+  def generateRecomandations()
+
+    rtnObj = { pending: [], approved: [], denied: [] }
+
+    self.recomandations.each do |rec|
+
+      if(rec.status == "pending")
+        rtnObj[:pending].push(rec.generateRec())
+      elsif(rec.status == "approved")
+        rtnObj[:approved].push(rec.generateRec())
+      elsif(rec.status == "denied")
+        rtnObj[:denied].push(rec.generateRec())
+      end
+
+    end
+
+    return rtnObj
 
   end
 

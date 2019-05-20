@@ -88,3 +88,9 @@ Roommate.create(user_id: syd.id,
 Roommate.create(user_id: syd.id,
                 roommate_user_id: aaron.id,
                 current: false )
+#rec
+Recomandation.create(user_id: matthew.id,
+                     user_from_id: syd.id,
+                     recomandation: "you were amazing",
+                     status: "pending"
+                    )

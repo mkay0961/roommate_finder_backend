@@ -17,8 +17,9 @@ ActiveRecord::Schema.define(version: 2019_05_19_211628) do
 
   create_table "recomandations", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "user_from_id"
     t.string "recomandation"
-    t.boolean "approved"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -8,7 +8,8 @@ class Roommate < ApplicationRecord
              first_name: person.first_name,
              last_name: person.last_name,
              profile_image: person.profile_image,
-             description: person.description,
+             description: person.description
             }
   end
+
 end
