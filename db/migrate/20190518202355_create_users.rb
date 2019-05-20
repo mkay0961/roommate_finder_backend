@@ -7,6 +7,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :last_name
       t.string :profile_image
       t.string :description
+      t.boolean :looking
+      t.string :address
 
       t.timestamps
     end

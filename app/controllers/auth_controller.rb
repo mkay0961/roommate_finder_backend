@@ -8,7 +8,7 @@ class AuthController < ApplicationController
         render json: {
           message: "Authenticated! You are logged in",
           authenticated: true,
-          user: @user,
+          user: @user.generateUserObj(),
           token: token
         }, status: :accepted
       else

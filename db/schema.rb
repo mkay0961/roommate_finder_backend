@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_05_19_211628) do
 
   create_table "roommates", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "roommate_id"
+    t.integer "roommate_user_id"
     t.boolean "current"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 2019_05_19_211628) do
     t.string "last_name"
     t.string "profile_image"
     t.string "description"
+    t.boolean "looking"
+    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

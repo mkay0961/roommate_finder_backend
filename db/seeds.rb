@@ -13,6 +13,7 @@ Roommate.destroy_all
 
 matthew = User.create(username: "mkay",
                       password: "123",
+                      looking: false,
                       first_name: "Matthew",
                       last_name: "Kay",
                       profile_image: "nil",
@@ -20,6 +21,8 @@ matthew = User.create(username: "mkay",
 
 aaron = User.create(username: "akay",
                       password: "123",
+                      looking: true,
+                      address: "Rockville, MD",
                       first_name: "Aaron",
                       last_name: "Kay",
                       profile_image: "nil",
@@ -27,6 +30,7 @@ aaron = User.create(username: "akay",
 
 syd = User.create(username: "skay",
                       password: "123",
+                      looking: false,
                       first_name: "Sydney",
                       last_name: "Kay",
                       profile_image: "nil",
@@ -35,6 +39,7 @@ syd = User.create(username: "skay",
 
 larry = User.create(username: "lkay",
                       password: "123",
+                      looking: false,
                       first_name: "Larry",
                       last_name: "Kay",
                       profile_image: "nil",
@@ -42,6 +47,7 @@ larry = User.create(username: "lkay",
 
 meredith = User.create(username: "mrodnan",
                       password: "123",
+                      looking: false,
                       first_name: "Meredith",
                       last_name: "Rodnan",
                       profile_image: "nil",
@@ -49,33 +55,36 @@ meredith = User.create(username: "mrodnan",
 
 #matthew
 Roommate.create(user_id: matthew.id,
-                roommate_id: syd.id,
+                roommate_user_id: syd.id,
                 current: true )
 
 Roommate.create(user_id: matthew.id,
-                roommate_id: larry.id,
+                roommate_user_id: larry.id,
                 current: true )
 
 Roommate.create(user_id: matthew.id,
-                roommate_id: meredith.id,
+                roommate_user_id: meredith.id,
                 current: true )
 
 Roommate.create(user_id: matthew.id,
-                roommate_id: aaron.id,
+                roommate_user_id: aaron.id,
                 current: false )
+
+
+
 #syd
 Roommate.create(user_id: syd.id,
-                roommate_id: matthew.id,
+                roommate_user_id: matthew.id,
                 current: true )
 
 Roommate.create(user_id: syd.id,
-                roommate_id: larry.id,
+                roommate_user_id: larry.id,
                 current: true )
 
 Roommate.create(user_id: syd.id,
-                roommate_id: meredith.id,
+                roommate_user_id: meredith.id,
                 current: true )
 
 Roommate.create(user_id: syd.id,
-                roommate_id: aaron.id,
+                roommate_user_id: aaron.id,
                 current: false )
