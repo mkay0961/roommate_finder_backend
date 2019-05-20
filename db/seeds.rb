@@ -5,3 +5,77 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Recomandation.destroy_all
+UserAttribute.destroy_all
+Roommate.destroy_all
+
+
+matthew = User.create(username: "mkay",
+                      password: "123",
+                      first_name: "Matthew",
+                      last_name: "Kay",
+                      profile_image: "nil",
+                      description: "i am great")
+
+aaron = User.create(username: "akay",
+                      password: "123",
+                      first_name: "Aaron",
+                      last_name: "Kay",
+                      profile_image: "nil",
+                      description: "i am great")
+
+syd = User.create(username: "skay",
+                      password: "123",
+                      first_name: "Sydney",
+                      last_name: "Kay",
+                      profile_image: "nil",
+                      description: "i am great")
+
+
+larry = User.create(username: "lkay",
+                      password: "123",
+                      first_name: "Larry",
+                      last_name: "Kay",
+                      profile_image: "nil",
+                      description: "i am great")
+
+meredith = User.create(username: "mrodnan",
+                      password: "123",
+                      first_name: "Meredith",
+                      last_name: "Rodnan",
+                      profile_image: "nil",
+                      description: "i am great")
+
+#matthew
+Roommate.create(user_id: matthew.id,
+                roommate_id: syd.id,
+                current: true )
+
+Roommate.create(user_id: matthew.id,
+                roommate_id: larry.id,
+                current: true )
+
+Roommate.create(user_id: matthew.id,
+                roommate_id: meredith.id,
+                current: true )
+
+Roommate.create(user_id: matthew.id,
+                roommate_id: aaron.id,
+                current: false )
+#syd
+Roommate.create(user_id: syd.id,
+                roommate_id: matthew.id,
+                current: true )
+
+Roommate.create(user_id: syd.id,
+                roommate_id: larry.id,
+                current: true )
+
+Roommate.create(user_id: syd.id,
+                roommate_id: meredith.id,
+                current: true )
+
+Roommate.create(user_id: syd.id,
+                roommate_id: aaron.id,
+                current: false )
