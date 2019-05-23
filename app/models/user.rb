@@ -46,9 +46,13 @@ class User < ApplicationRecord
 
   def generateUserAttributes()
 
+    # rtnArray = []
+
     return self.user_attributes.map do |attribute|
-        return attribute
+        attribute.generateAttribute()
     end
+
+    # return rtnArray
 
   end
 
