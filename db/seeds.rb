@@ -94,3 +94,16 @@ Recomandation.create(user_id: matthew.id,
                      recomandation: "you were amazing",
                      status: "pending"
                     )
+
+#attributes
+UserAttribute.create(user_id: matthew.id,
+                     user_attribute: "clean")
+
+UserAttribute.create(user_id: syd.id,
+                      user_attribute: "clean")
+
+UserAttribute.create(user_id: matthew.id,
+                     user_attribute: "outgoing")
+
+UserAttribute.create(user_id: syd.id,
+                     user_attribute: "outgoing")

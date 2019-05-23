@@ -1,7 +1,7 @@
 class UserAttributesController < ApplicationController
 
   def index
-    render json: UserAttributes.all
+    render json: UserAttribute.all
   end
 
 end

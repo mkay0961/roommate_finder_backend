@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user
       render json: @user.generateUserObj()
     else
-      # do somthing
+      # do somthing 
     end
   end
 
