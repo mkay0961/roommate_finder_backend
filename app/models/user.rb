@@ -6,6 +6,25 @@ class User < ApplicationRecord
   has_secure_password
   validates :username, uniqueness: { case_sensitive: false }
 
+  def generateUserObjGeneral()
+
+    rtnObj = { id: self.id,
+             first_name: self.first_name,
+             last_name: self.last_name,
+             profile_image: self.profile_image,
+             description: self.description,
+             looking: self.looking,
+            }
+    if(self.looking)
+      rtnObj[:address] = self.address
+    end
+
+    return rtnObj
+
+  end
+
+
+
   def generateUserObj()
 
     rtnObj = { id: self.id,
