@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
   def show
-    # token = request.headers["Authentication"].split(' ')[1]
-    # payload = decode(token)
-    # @user = User.find(payload["user_id"])
-    @user = User.find(params["id"])
+    token = request.headers["Authentication"].split(' ')[1]
+    payload = decode(token)
+    @user = User.find(payload["user_id"])
+    # @user = User.find(params["id"])
     if @user
       render json: @user.generateUserObjGeneral()
     else
@@ -17,10 +17,10 @@ class UsersController < ApplicationController
   end
 
   def recomendations
-    # token = request.headers["Authentication"].split(' ')[1]
-    # payload = decode(token)
-    # @user = User.find(payload["user_id"])
-    @user = User.find(params["id"])
+    token = request.headers["Authentication"].split(' ')[1]
+    payload = decode(token)
+    @user = User.find(payload["user_id"])
+    # @user = User.find(params["id"])
     if @user
       render json: @user.generateRecomandations()
     else
@@ -29,10 +29,10 @@ class UsersController < ApplicationController
   end
 
   def roommates
-    # token = request.headers["Authentication"].split(' ')[1]
-    # payload = decode(token)
-    # @user = User.find(payload["user_id"])
-    @user = User.find(params["id"])
+    token = request.headers["Authentication"].split(' ')[1]
+    payload = decode(token)
+    @user = User.find(payload["user_id"])
+    # @user = User.find(params["id"])
     if @user
       render json: @user.generateRoommates()
     else
@@ -41,10 +41,10 @@ class UsersController < ApplicationController
   end
 
   def attributes
-    # token = request.headers["Authentication"].split(' ')[1]
-    # payload = decode(token)
-    # @user = User.find(payload["user_id"])
-    @user = User.find(params["id"])
+    token = request.headers["Authentication"].split(' ')[1]
+    payload = decode(token)
+    @user = User.find(payload["user_id"])
+    # @user = User.find(params["id"])
     if @user
       render json: @user.generateUserAttributes()
     else
@@ -53,10 +53,10 @@ class UsersController < ApplicationController
   end
 
   def detailed
-    # token = request.headers["Authentication"].split(' ')[1]
-    # payload = decode(token)
-    # @user = User.find(payload["user_id"])
-    @user = User.find(params["id"])
+    token = request.headers["Authentication"].split(' ')[1]
+    payload = decode(token)
+    @user = User.find(payload["user_id"])
+    # @user = User.find(params["id"])
     if @user
       render json: @user.generateUserObj()
     else
